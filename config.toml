@@ -1,0 +1,74 @@
+DefaultContentLanguage = "en"
+baseURL = 'https://'
+theme = 'minimal'
+relativeURLs = true
+
+[languages]
+  [languages.en]
+    languageName = 'English'
+    title = 'Public Notebook'
+    name = ""
+    description = ""
+    
+    [[languages.en.menu.main]]
+      identifier = "home"
+      name = "Home"
+      url ="/"
+      weight = 1
+    
+    [[languages.en.menu.main]]
+      identifier = "linguistics"
+      name = "Linguistics"
+      url  = "/linguistics/"
+      weight = 2
+          
+  [languages.fr]
+    languageName = 'Français'
+    weight = 2
+    
+    [[languages.fr.menu.main]]
+      identifier = "home"
+      name = "Cher"
+      url ="/fr/"
+      weight = 1
+    
+    [[languages.fr.menu.main]]
+      identifier = "linguistics"
+      name = "Linguistique"
+      url  = "/fr/linguistics/"
+      weight = 2
+              
+  [languages.ru]
+    languageName = 'Russian'
+    weight = 3
+     
+    [[languages.ru.menu.main]]
+      identifier = "home"
+      name = "Главная"
+      url ="/ru/"
+      weight = 1
+    
+    [[languages.ru.menu.main]]
+      identifier = "linguistics"
+      name = "Лингвистика"
+      url  = "/ru/linguistics/"
+      weight = 2
+            
+  [languages.pt]
+    languageName = 'Portuguese'
+    title = "Caderno público"
+    name = ""
+    description = ""
+    weight = 4
+    
+    [[languages.pt.menu.main]]
+      identifier = "home"
+      name = "Início"
+      url ="/pt/"
+      weight = 1
+    
+    [[languages.pt.menu.main]]
+      identifier = "linguistics"
+      name = "Linguística"
+      url  = "/pt/linguistics/"
+      weight = 2

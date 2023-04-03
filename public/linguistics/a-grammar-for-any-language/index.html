@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="robots" content="noindex, nofollow">
+
+	<meta name="generator" content="Hugo 0.110.0">
+
+	
+	
+
+	<title>A Grammar for Any Language | Public Notebook</title>
+
+	
+	<link rel="stylesheet" href="../../css/fonts.css">
+
+	
+	<link rel="stylesheet" href="../../css/style.css">
+
+	
+
+	
+
+
+</head>
+
+  
+  <body class="">
+
+    
+
+<header>
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<nav>
+	<a href="../../" title="Home" aria-label="Home" id="home"></a> 
+	<div id="list">
+		    
+		<a href="../../foss/" title="Free and Open Source Software" aria-label="Free and Open Source Software" id="">FOSS</a> 
+		<a href="../../culture/" title="Culture" aria-label="Culture" id="">Culture</a> 
+		<a href="../../linguistics/" title="Linguistics" aria-label="Linguistics" id="">Linguistics</a> 
+		
+	</div>
+</nav>
+
+
+
+
+<div id="light-box">
+		<label for="light">☀</label>
+		<input type='checkbox' class="light" aria-label="Switch between Dark and Light mode" title="Switch between dark and light mode">
+</div>
+
+
+
+</header>
+
+
+
+	
+
+<main>
+
+<div id="hidden-bar">
+<h1 id="title">
+A Grammar for Any Language
+
+</h1>
+
+
+
+
+</div>
+
+<br><br>
+
+<div id="content">
+
+<h3 id="the-case-for-such-grammar">The case for such grammar</h3>
+<p>So you want to learn new languages or maybe even teach them?</p>
+<p>I&rsquo;ve seeking for some way to learn new stuff on my own a couple of times throughout my life, but up to some months ago it was being hard somehow.
+I had found &ldquo;An Introduction to Descriptive Linguistics&rdquo; by H. A. Gleason in an old-book store and begun to be more interested in the subject, particularly
+the concept of a abstract and formal reduction of language (and complex structures in general as well) to the pure and simple description of each of its parts.</p>
+<p>I mean, learning first how all natural languages works in its more deep gears, and then speed up the learning of any of them: inversely of what some pleople think,
+natural languages are distinguished by differences in its syntaxes and not in the lexical body. So learn foreign language is firstly about get how the sense is build
+according to its inner rules. The vocabulary and other &ldquo;external&rdquo; features comes just after that.</p>
+<h2 id="basic-questions">Basic questions:</h2>
+<ol>
+<li>Is it a synthetic language or an analytic one?</li>
+</ol>
+<p>Synthetic languages best-know examples are german, latin, greek and russian: the syntatic function of the words are defined by suffixation and word order does not have great importance.
+Whereas in analytic languages such as portuguese, italian and mandarim the position of the word has a fundamental role for its right meaning. It may look a bit hard at the beginning for
+someone used only to the analitic ones get who is who in a pure synthetic sentence lacking of any order.</p>
+<ol start="2">
+<li>Has it some relation to your mother tongue?</li>
+</ol>
+<p>Obviously, it&rsquo;s much easier for a russian native speaker to learn ukrainian than for a spanish native speaker, but on the other side, for the last it&rsquo;s much easier to learn portuguese
+than for the first&hellip;</p>
+<h2 id="which-features-underlies-every-sentence-in-any-language">Which features underlies every sentence in any language?</h2>
+<ol>
+<li>An agent</li>
+<li>An action</li>
+<li>The object of such action</li>
+</ol>
+<h2 id="from-where-to-begin">From where to begin?</h2>
+<p>The first step is, of course, learn the invariable words and the most common ones, a great way to get such set of words is consulting a Swadesh list, you can even generate multiple lists,
+side-by-side, for the languages you are searching on using python 
+<a href="https://www.nltk.org/" target="_blank">Natural Language Toolkit</a>
+
+. Here are some examples of what you can do with it:</p>
+<ul>
+<li>
+<a href="../../pdfs/swadesh.pdf" target="_blank">Romance languages</a>
+
+</li>
+<li>
+<a href="../../pdfs/swadesh-slav.pdf" target="_blank">Slavic languages</a>
+
+</li>
+<li>
+<a href="../../pdfs/swadesh-germanic.pdf" target="_blank">Germanic languages</a>
+
+</li>
+</ul>
+<p>The base script for generate such pdf is the follow, you just need to change the ISO 639-1 language codes:</p>
+<details>
+  <summary>see the code</summary>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">swadesh</span> 
+</span></span><span class="line"><span class="cl">  <span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">table</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;latin&#34;</span><span class="p">:</span> <span class="n">swadesh</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s2">&#34;la&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;portuguese&#34;</span><span class="p">:</span> <span class="n">swadesh</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s2">&#34;pt&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;spanish&#34;</span><span class="p">:</span> <span class="n">swadesh</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s2">&#34;es&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;french&#34;</span><span class="p">:</span> <span class="n">swadesh</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s2">&#34;fr&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;italian&#34;</span><span class="p">:</span> <span class="n">swadesh</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s2">&#34;it&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;romanian&#34;</span><span class="p">:</span> <span class="n">swadesh</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s2">&#34;ro&#34;</span><span class="p">)}</span>
+</span></span><span class="line"><span class="cl">           
+</span></span><span class="line"><span class="cl">  <span class="n">tb</span> <span class="o">=</span> <span class="n">tabulate</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;grid&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;swadesh.md&#34;</span><span class="p">,</span> <span class="s2">&#34;w&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sl</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">sl</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\pagenumbering</span><span class="si">{gobble}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">sl</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">sl</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">tb</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">sl</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1"># pandoc file.md -o file.pdf</span>
+</span></span></code></pre></div>
+</details>
+
+<h2 id="the-first-sentences">The first sentences</h2>
+<p>Once you are able to identify these basic words, you be ready to read a lot of simple texts (no kidding, really). See my brief <a href="../../linguistics/starting-russian">introduction to russian</a> to see
+a example.</p>
+<h2 id="those-universal-synthatical-features">Those &ldquo;universal&rdquo; synthatical features</h2>
+<p>Note that there are not many syntax differences among languages of the same branch, compare the</p>
+
+
+</div>
+
+</main>
+
+
+
+	
+
+<footer>
+
+</footer>
+
+  
+
+	
+	<script src="../../js/dark.js"></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{{ $urls  := slice }}
+{{ $names := slice }}
+
+{{ range $index, $element := .Site.Menus.main }}
+  {{ $urls = $urls | append $element.URL }}
+  {{ $names = $names | append $element.Name }}
+{{ end }}
+
+<nav>
+	<a href="{{ index $urls 0 }}" title="{{ index $names 0 }}" aria-label="{{ index $names 0 }}" id="home"></a> 
+	<div id="list">
+		    
+		<a href="{{ index $urls 2 | relURL }}" title="{{ index $names 2 }}" aria-label="{{ index $names 2 }}" id="">FOSS</a> 
+		<a href="{{ index $urls 3 | relURL}}" title="{{ index $names 3 }}" aria-label="{{ index $names 3 }}" id="">{{ index $names 3 }}</a> 
+		<a href="{{ index $urls 1 | relURL }}" title="{{ index $names 1 }}" aria-label="{{ index $names 1 }}" id="">{{ index $names 1 }}</a> 
+		
+	</div>
+</nav>
