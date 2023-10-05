@@ -1,0 +1,26 @@
+DefaultContentLanguage = "en"
+baseURL = 'https://www.example.com'
+theme = 'minimal'
+relativeURLs = true
+
+[languages]
+  [languages.en]
+    languageName = 'English'
+    title = ''
+
+  [languages.fr]
+    languageName = 'Français'
+    title = ''
+
+  [languages.ru]
+    languageName = 'Russian'
+    title = ''
+
+  [languages.pt]
+    languageName = 'Portuguese'
+    title = ''
+
+[sitemap]
+  changeFreq = ''
+  filename = 'sitemap.xml'
+  priority = -1
